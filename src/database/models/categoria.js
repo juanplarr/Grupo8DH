@@ -1,10 +1,28 @@
-const { DataTypes } = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  const Categoria = sequelize.define(
+    "Categoria",
+    {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+      nombre: DataTypes.STRING,
+      estado: DataTypes.TINYINT,
+    },
+    {
+      tableName: "categorias",
+      timestamps: false,
+    }
+  );
 
-module.exports = (sequelize) => {
-  const Categoria = sequelize.define('Categoria', {
-    nombre_categoria: DataTypes.STRING,
-    estado_categoria: DataTypes.TINYINT,
-  });
+  Categoria.associate = (models) => {
+    Categoria.hasMany(models.Producto, {
+      as: "Productos",
+      foreignKey: "categoriaId",
+    });
+  };
 
   return Categoria;
 };

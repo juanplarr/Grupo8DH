@@ -5,7 +5,7 @@
     "marca": "Gorriao",
     "descripcion": "Collar minimalista de acero inoxidable",
     "precio": "12000",
-    "tipoDeProducto": "colgante",
+    "categoria": "colgante",
     "avatar": "1704917379561_img.jpg"
   },
   {
@@ -14,7 +14,7 @@
     "marca": "Gorriao",
     "descripcion": "Collar de plata ",
     "precio": "55000",
-    "tipoDeProducto": "colgante",
+    "categoria": "colgante",
     "avatar": "1707418528086_img.jpg"
   },
   {
@@ -23,7 +23,7 @@
     "marca": "Gorriao",
     "descripcion": "Collar de plata con detalles botánicos",
     "precio": "46000",
-    "tipoDeProducto": "colgante",
+    "categoria": "colgante",
     "avatar": "1707418569437_img.jpg"
   },
   {
@@ -32,7 +32,7 @@
     "marca": "Gorriao",
     "descripcion": "Cinturon industrial de cuero",
     "precio": "25200",
-    "tipoDeProducto": "cinturon",
+    "categoria": "cinturon",
     "avatar": "1704917430494_img.jpg"
   },
   {
@@ -41,7 +41,7 @@
     "marca": "Gorriao",
     "descripcion": "Cinturon clasico para hombre",
     "precio": "45000",
-    "tipoDeProducto": "cinturon",
+    "categoria": "cinturon",
     "avatar": "1707418422686_img.jpg"
   },
   {
@@ -50,7 +50,7 @@
     "marca": "Gorriao",
     "descripcion": "Cinturon de cuero con hebilla ovalo",
     "precio": "43000",
-    "tipoDeProducto": "cinturon",
+    "categoria": "cinturon",
     "avatar": "1707418452593_img.jpg"
   },
   {
@@ -59,7 +59,7 @@
     "marca": "Gorriao",
     "descripcion": "Aros recubiertos en oro para dama",
     "precio": "26000",
-    "tipoDeProducto": "arito",
+    "categoria": "arito",
     "avatar": "1704917737565_img.jpg"
   },
   {
@@ -68,7 +68,7 @@
     "marca": "Gorriao",
     "descripcion": "Conjunto de aros dorados",
     "precio": "18000",
-    "tipoDeProducto": "arito",
+    "categoria": "arito",
     "avatar": "1704917796812_img.jpg"
   },
   {
@@ -77,7 +77,7 @@
     "marca": "Gorriao",
     "descripcion": "Aros de oro",
     "precio": "55500",
-    "tipoDeProducto": "arito",
+    "categoria": "arito",
     "avatar": "1707418919119_img.jpg"
   },
   {
@@ -86,7 +86,7 @@
     "marca": "Gorriao",
     "descripcion": "Gorra rosa y celeste ",
     "precio": "25000",
-    "tipoDeProducto": "gorra",
+    "categoria": "gorra",
     "avatar": "1707418739354_img.jpg"
   },
   {
@@ -95,7 +95,7 @@
     "marca": "Gorriao",
     "descripcion": "Gorra azul con bordado blanco",
     "precio": "25000",
-    "tipoDeProducto": "gorra",
+    "categoria": "gorra",
     "avatar": "1707418762575_img.jpg"
   },
   {
@@ -104,7 +104,7 @@
     "marca": "Gorriao",
     "descripcion": "Gorra verde y morada ",
     "precio": "25500",
-    "tipoDeProducto": "gorra",
+    "categoria": "gorra",
     "avatar": "1707418802874_img.jpg"
   },
   {
@@ -113,7 +113,7 @@
     "marca": "Gorriao",
     "descripcion": "Cartera de cuero negra",
     "precio": "67000",
-    "tipoDeProducto": "cartera",
+    "categoria": "cartera",
     "avatar": "1707419102088_img.jpg"
   },
   {
@@ -122,7 +122,7 @@
     "marca": "Gorriao",
     "descripcion": "Cartera de cuero negra",
     "precio": "60000",
-    "tipoDeProducto": "gorra",
+    "categoria": "gorra",
     "avatar": "1707419140682_img.jpg"
   },
   {
@@ -131,7 +131,7 @@
     "marca": "Gorriao",
     "descripcion": "Cartera de cuero marron",
     "precio": "58000",
-    "tipoDeProducto": "cartera",
+    "categoria": "cartera",
     "avatar": "1707419166473_img.jpg"
   }
 ]
