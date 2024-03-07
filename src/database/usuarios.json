@@ -1,0 +1,65 @@
+[
+  {
+    "nombre": "Juan",
+    "apellido": "González",
+    "dni": "12345678",
+    "email": "juan@example.com",
+    "password": "clave123",
+    "avatar": "avatar1.jpg",
+    "role": 1
+  },
+  {
+    "nombre": "María",
+    "apellido": "Rodríguez",
+    "dni": "87654321",
+    "email": "maria@example.com",
+    "password": "secreto456",
+    "avatar": "avatar2.jpg",
+    "role": 1
+  },
+  {
+    "nombre": "Carlos",
+    "apellido": "López",
+    "dni": "54321678",
+    "email": "carlos@example.com",
+    "password": "clave789",
+    "avatar": "avatar3.jpg",
+    "role": 1
+  },
+  {
+    "nombre": "Nico",
+    "apellido": "Gerez",
+    "dni": "22333444",
+    "email": "gerez@gmail.com",
+    "password": "$2a$10$7aO.tcxOmcAsnyeG/maGSelffTlDBd406lyYLHD/Hiwa0Gr0GXa9G",
+    "avatar": "1705194366272_img.jpg",
+    "role": 1
+  },
+  {
+    "nombre": "Juan",
+    "apellido": "Larrea",
+    "dni": "37510278",
+    "email": "jp.larrea11@gmail.com",
+    "password": "$2a$10$750IWf2eWq8QPrfmU8OQd./RPlCR4OjXB8HCZBpHyNDsoSCzaWOdy",
+    "avatar": "1705271191309_img.jpg",
+    "role": 1
+  },
+  {
+    "nombre": "Juan1",
+    "apellido": "Juan1",
+    "dni": "37375375",
+    "email": "juan1@mail.com",
+    "password": "$2a$10$3PkogsZfxXMz/2hZM56RgecNIzsUxyBTfmWZHEK7pg5qS65ztUaBW",
+    "avatar": "1708355474526_img.jpg",
+    "role": 1
+  },
+  {
+    "nombre": "Ejemplo",
+    "apellido": "ejemplar",
+    "dni": "12124124",
+    "email": "123@123.com",
+    "password": "$2a$10$AH8oacKM7LMYDZwCE/cL1uR1kJGy8TfLYEy4TCduAMvLVXI3b6vfu",
+    "avatar": "1709583396244_img.jpg",
+    "role": 1
+  }
+]

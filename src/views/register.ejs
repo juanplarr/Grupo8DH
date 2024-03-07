@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/estiloRegistro.css">
+    <title>Gorriao - Registro</title>
+    <%- include('parciales/head') %>
+</head>
+
+<body>
+    <%- include('parciales/header') %>
+
+    <div class="container">
+        <div>     <% if(typeof(errors) != 'undefined'){%>
+            <ul class="alert alert-danger">
+               <% errors.forEach(error => { %>
+                  <li><%= error.msg%></li>
+               <%});%>
+             </ul>
+         <%}%>   
+
+        <form action="/register" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="campo" for="nombre">Nombre:</label>
+                <input class="campo-input" type="text" id="nombre" name="nombre" value="<%= typeof old != 'undefined' ? old.nombre : '' %>">
+            </div>
+            <div class="form-group">
+                <label class="campo" for="apellido">Apellido:</label>
+                <input class="campo-input" type="text" id="apellido" name="apellido" value="<%= typeof old != 'undefined' ? old.apellido : '' %>">
+            </div>
+            <div class="form-group">
+                <label class="campo" for="dni">DNI:</label>
+                <input class="campo-input" type="tel" id="dni" name="dni" pattern="[0-9]{8}" value="<%= typeof old != 'undefined' ? old.dni : '' %>">
+            </div>
+            <div class="form-group">
+                <label class="campo" for="email">Correo electrónico:</label>
+                <input class="campo-input" type="email" id="email" name="email" value="<%= typeof old != 'undefined' ? old.email : '' %>">
+            </div>
+            <div class="form-group">
+                <label class="campo" for="avatar">Avatar</label>
+                <input class="custom-file" type="file"  name="avatar" id="avatar" accept="image/*" placeholder="Debes eligir tu avatar...">
+            </div>
+            <div class="form-group">
+                <label class="campo" for="password">Contraseña:</label>
+                <div class="input-container">
+                    <input class="campo-input password" type="password" id="password" name="password" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="campo" for="repeatPassword">Repetir contraseña:</label>
+                <input class="campo-input password" type="password" id="repeatPassword" name="repeatPassword" >
+            </div>
+            <div class="input-container">
+                <button class="eye-button" type="button" id="togglePassword">Mostrar/Ocultar</button>
+            </div>
+            <div class="form-group">
+                <label class="campo" for="subscribe">¿Desea suscribirse para recibir las últimas novedades y ofertas de
+                    nuestros productos a su correo?</label>
+                <input type="checkbox" id="subscribe" name="subscribe" style="vertical-align: middle;">
+            </div>
+            <button class="register" type="submit">Registrarse</button>
+        </form>
+    </div>
+</div>
+
+      
+    <%- include('parciales/footer') %>
+
+    <script src="/app.js"></script>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInputs = document.querySelectorAll('.password');
+            passwordInputs.forEach(function (input) {
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+            });
+        });
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            const password = document.getElementById('password').value;
+            const repeatPassword = document.getElementById('repeatPassword').value;
+
+            if (password !== repeatPassword) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

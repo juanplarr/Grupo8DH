@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/caredit.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./img/Gorriao.ico" type="image/x-icon">
+    <title>Nuevo producto</title>
+</head>
+<body>
+
+    <%- include('parciales/header') %>
+
+
+    <div class="formingreso">
+        <form action="/caredit.ejs" method="POST">
+
+            <h2>Agregar un producto a la tienda</h2>
+
+            <p>
+                <label for="nombreproducto" class="formu">Nombre del producto</label>
+                <input type="text" name="nombreproducto" id="nombreproducto" class="texto" value="Gorra">
+            </p>
+
+            <p>
+                <label for="marca" class="formu">Marca</label>
+                <input type="text" name="marca" id="marca" class="texto" value="IKT">
+            </p>
+
+            <p>
+                <label for="descripcion" class="formu">Descripción</label>
+                <input type="text" name="descripcion" id="descripcion" class="texto" value="Gorra de algodón">
+            </p>
+
+            <p>
+                <label for="precio" class="formu">Precio</label>
+                <input type="text" name="precio" id="precio" class="texto" value="$5000">
+            </p>
+
+            <p>
+                <label class="formu">Tipo de producto</label>
+            <ul class="categorias">
+                <li>Gorra: <input type="radio" name="tipoDeProducto" value="gorra" checked></li>
+                <li>Aritos: <input type="radio" name="tipoDeProducto" value="arito"></li>
+                <li>Cinturon: <input type="radio" name="tipoDeProducto" value="cinturon"></li>
+                <li>Colgante: <input type="radio" name="tipoDeProducto" value="colgante"></li>
+                <li>Cartera: <input type="radio" name="tipoDeProducto" value="cartera"></li>
+            </ul>
+            </p>
+
+            <p>
+                <label class="formu">Selecciona una foto para tu producto</label>
+                <input type="file" name="avatar" accept=".jpg">
+            </p>
+
+            <div class="botonespie">
+                <p>
+                    <input type="submit" value="Enviar"></input>
+                </p>
+                <p>
+                    <button type="reset">Reiniciar</button>
+                </p>
+            </div>
+
+
+        </form>
+    </div>
+</body>
+
+<%- include('parciales/footer') %>
+
+</html>

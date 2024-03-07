@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--guardar esta vista para admin-->
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/product.css">
+    <title>Gorriao - Producto</title>
+    <%- include('parciales/head') %>
+</head>
+
+<body>
+
+    <%- include('parciales/header') %>
+
+    <main>
+        <!--Listado de Productos-->
+        <br>
+        <section class="row">
+            <article class="col-12">
+                <a href="/caredit" class="add-link"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
+            </article>
+            <article class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Ver</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% productosL.forEach(producto => { %>
+                        <tr>
+                            <td><%= producto.id%> </td>
+                            <td><%= producto.nombreproducto%> </td>
+                            <td><img src="/images/productos/<%= producto.avatar%>" alt="<%= producto.nombreproducto %>"></td>
+                            <td><a href="/products/prodDetail/<%= producto.id%> "><ion-icon name="eye-outline"></ion-icon></a></td>
+                            <td><a href="/products/prodEdit/<%= producto.id%> "><ion-icon name="pencil-outline"></ion-icon></a></td>
+                            <td><a href="/products/prodDelete/<%= producto.id%> "><ion-icon name="trash-outline"></ion-icon></a></td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    </main>
+
+    <%- include('parciales/footer') %>
+</body>
+
+</html>

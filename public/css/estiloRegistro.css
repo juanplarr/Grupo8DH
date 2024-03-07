@@ -1,0 +1,393 @@
+/*===========HEADER AND BANNER===========*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebebeb;
+    margin-top: 175px;
+}
+
+.login {
+    color: black;
+    text-decoration: none
+}
+
+.carrito {
+    color: black;
+    text-decoration: none
+}
+
+
+.logoprincipal {
+    width: 60%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 0px;
+    border: 1px solid #333;
+}
+
+.cajalogo {
+    width: 20%;
+    text-align: center;
+}
+
+
+
+.login a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.login a:visited {
+    color: black;
+}
+
+.carrito a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.carrito a:visited {
+    color: black;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: #e5bf91;
+    width: 100%;
+    z-index: 250;
+    padding-top: 15px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.searchbar {
+    align-content: center;
+    width: 60%;
+    display: flex;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-bar input {
+    position: relative;
+    z-index: 915;
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    font-family: inherit;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    height: 40px;
+    width: 100%;
+    padding: 10px 60px 10px 15px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 1.5px;
+}
+
+.search-bar button {
+    position: absolute;
+    z-index: 920;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #666;
+    line-height: 1em;
+    border-radius: 0 2px 2px 0;
+    width: 46px;
+    right: 0;
+    left: auto;
+    background-image: none;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+.user-cart {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: 20%;
+    align-items: center;
+    font-size: 24px;
+}
+
+.fa-custom {
+    color: black;
+}
+
+.navbar {
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 15px 10px 15px 10px;
+    margin-top: -8px;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/*==========BODY===========*/
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    margin-bottom: 50px;
+}
+
+form {
+    background-color: white;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+/* Espacio entre cada campo */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Alineados por la izquierda*/
+}
+
+/* Bordes redondeados para los campos de entrada, así se ven más bonitos */
+.campo-input {
+    width: calc(100% - 20px); /* Ancho del campo al 100% menos 20px para el padding */
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Marco negro y bordes redondeados para el botón "Mostrar/Ocultar", el ojito aún no puedo implementarlo */
+.eye-button {
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+
+}
+
+.register {
+    font-family: Arial;
+    color: #000000;
+    font-size: 16px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.register:hover {
+    background: #2079b0;
+  }
+  
+
+
+.smaller {
+    font-size: 18px;
+}
+
+
+.campo {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px; /* Espacio entre el nombre y su respectivo campo */
+}
+
+
+/*============FOOTER====================*/
+footer {
+    width: 100%;
+    background: #cccccc;
+    color: #000000;
+    position: absolute;
+}
+
+.container-footer-all {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container-body {
+    display: flex;
+    padding: 25px 10px 25px 10px;
+    flex-direction: column;
+}
+
+.column-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.column-1, .column-2, .column-3, .column-4 {
+    width: 40%;
+}
+
+.column-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.redes-sociales {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    color: black;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.redes-sociales a i {
+    font-size: 20px;
+}
+
+.horario{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.horario label{
+    padding-bottom: 10px;
+}
+
+.medios_pago {
+    margin-top: 10px;
+}
+
+.contacto {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.contacto a {
+    text-decoration: none;
+    color: black;
+}
+
+.contacto a i{
+    font-size: 20px;
+}
+
+.container-footer {
+    max-width: 100%;
+    background: #414141;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.copyright {
+    color: #ffffff;
+}
+
+.copyright a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.information a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.errors {
+    color: red;
+}
+
+@media (min-width: 761px) {
+    .cajalogo {
+       width: 15%;
+    }
+
+    .searchbar{
+        width: 75%;
+    }
+    
+    .user-cart{
+        width: 10%;
+    }
+    .navbar ul {
+        margin-top: -40px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 5vb;
+    }
+
+    body {
+        background-color: #ebebeb;
+        margin-top: 12rem;
+    }
+
+    .container-body{
+        flex-direction: row;
+    }
+
+    .column-1, .column-2, .column-3, .column-4 {
+        padding-right: 50px;
+        padding-left: 50px;
+        width: 50%;  
+    }
+}
+
+

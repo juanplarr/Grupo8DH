@@ -1,0 +1,608 @@
+
+/*===========HEADER AND BANNER===========*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebebeb;
+    margin-top: -3rem;
+}
+
+.login {
+    color: black;
+    text-decoration: none
+}
+
+.carrito {
+    color: black;
+    text-decoration: none
+}
+
+
+.logoprincipal {
+    width: 60%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 0px;
+    border: 1px solid #333;
+}
+
+.cajalogo {
+    width: 20%;
+    text-align: center;
+}
+
+
+
+.login a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.login a:visited {
+    color: black;
+}
+
+.carrito a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.carrito a:visited {
+    color: black;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: #e5bf91;
+    width: 100%;
+    z-index: 250;
+    padding-top: 15px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.searchbar {
+    align-content: center;
+    width: 60%;
+    display: flex;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-bar input {
+    position: relative;
+    z-index: 915;
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    font-family: inherit;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    height: 40px;
+    width: 100%;
+    padding: 10px 60px 10px 15px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 1.5px;
+}
+
+.search-bar button {
+    position: absolute;
+    z-index: 920;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #666;
+    line-height: 1em;
+    border-radius: 0 2px 2px 0;
+    width: 46px;
+    right: 0;
+    left: auto;
+    background-image: none;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+.user-cart {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: 20%;
+    align-items: center;
+    font-size: 24px;
+}
+
+.fa-custom {
+    color: black;
+}
+
+.navbar {
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 15px 10px 15px 10px;
+    margin-top: -8px;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color:#000000;
+}
+
+
+
+/*=================Form Agregar=================*/
+.form-container {
+    width: 400px;
+    background: #ffffff;
+    padding: 30px;
+    margin: auto;
+    margin-top: 15vh;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    font-family: 'calibri';
+}
+
+.form-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 70px;
+}
+
+.texto {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #B2B0AE;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+
+.formu {
+    height: 40px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.categorias {
+    list-style: none;
+}
+
+.botonespie {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-info {
+    background-color: #B2B0AE;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: #e5bf91;
+    color: #ffffff;
+}
+/*=================ProductoDetalle=================*/
+.container-main{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+    margin-top: 15vh;
+    margin-bottom: 50px;
+}
+
+    /* Imagen Principal */
+.container-principal img {
+    border: 1px solid black;
+    border-radius: 18px;
+    width: 100%;
+    height: 100%;
+}
+
+    /* Imagenes Secundarias */
+.container-secondary{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.container-secondary img{
+    width: 30%;
+    height: 15vb;
+    border-radius: 15px;
+}
+
+    /* Container Con la Informacion */
+.container-info {
+    padding: 20px 20px 20px 10px;
+    background-color: white;
+    border-radius: 18px;
+    margin-top: 10px;
+}
+
+.container-info h4 {
+    margin-top: 10px;
+}
+
+.container-info h3 { 
+    margin-top: 30px;
+}
+
+    /* Seleccion de Colores */
+.selector-color {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.selector-color h3 {
+    margin-top: 0;
+}
+
+.selector-color input[type='radio']{
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    appearance: none; /* A los input de tipo radio button les puse appareance none para poder modificarlo con los atributos comunes */
+    border: 0px;
+    border-radius: 50%;
+}
+
+#color-azul {
+    background-color: blue;
+}
+
+#color-rojo {
+    background-color: red;
+}
+
+#color-violeta {
+    background-color: purple;
+}
+
+#color-azul:checked, #color-rojo:checked, #color-violeta:checked {
+    border: 3px solid black;
+}
+
+    /* Zona de Botones */
+.buttons-zone {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+    .counter-quantity {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+    }
+
+    .counter-quantity button {
+        padding: 7px 10%;
+        background-color: #666;
+        color: white;
+        border: 1px solid #666;
+    }
+
+    .counter-quantity button:first-child {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .counter-quantity button:last-child {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .counter-quantity input {
+        width: inherit;
+        text-align: center;
+    }
+
+    .button-add-cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        margin-left: 10%;
+    }
+
+    .button-add-cart button {
+        width: 100%;
+        font-size: 22px;
+        color: white;
+        background-color: #666;
+        cursor: pointer;
+        border-radius: 15px;
+        padding: 5px 14px;
+        margin: auto;
+    }
+
+    /* Zona de Agregar a favorito */
+.favorite-zone {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.favorite-zone input {
+    display: none;
+}
+
+/* El operador ~ asigna el CSS solo cuando el elemento del lado izquierdo exista  */
+#add-favorite:checked ~ label span {
+    color: red;
+}
+
+.favorite-zone label span {
+    font-size: 2rem;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    background-color: #e5bf91;
+}
+
+.carousel-container h2 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.carousel-slider {
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Añade soporte de desplazamiento suave en iOS */
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: scroll 7.5s linear infinite;
+}
+
+.carousel img {
+    flex: 0 0 auto;
+    width: 40%;
+    height: 25vh;
+    scroll-snap-align: start;
+    border-radius: 30px;
+    padding: 20px; /* Espaciado interno para los elementos del carrusel */
+}
+
+
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+/*============FOOTER====================*/
+footer {
+    width: 100%;
+    background: #cccccc;
+    color: #000000;
+    position: absolute;
+}
+
+.container-footer-all {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container-body {
+    display: flex;
+    padding: 25px 10px 25px 10px;
+    flex-direction: column;
+}
+
+.column-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.column-1, .column-2, .column-3, .column-4 {
+    width: 40%;
+}
+
+.column-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.redes-sociales {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    color: black;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.redes-sociales a i {
+    font-size: 20px;
+}
+
+.horario{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.horario label{
+    padding-bottom: 10px;
+}
+
+.medios_pago {
+    margin-top: 10px;
+}
+
+.contacto {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.contacto a {
+    text-decoration: none;
+    color: black;
+}
+
+.contacto a i{
+    font-size: 20px;
+}
+
+.container-footer {
+    max-width: 100%;
+    background: #414141;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.copyright {
+    color: #ffffff;
+}
+
+.copyright a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.information a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+@media (min-width: 761px) {
+    .cajalogo {
+       width: 15%;
+    }
+
+    .searchbar{
+        width: 75%;
+    }
+    
+    .user-cart{
+        width: 10%;
+    }
+
+    .navbar ul {
+        margin-top: -40px;
+    }
+
+    .container-main {
+        margin-top: 5vh;
+        flex-direction: row;
+    }
+    
+    .container-imgs{
+        width: fit-content;
+    }
+    
+    .container-secondary img{
+        height: 25vb;
+    }
+
+    .container-info {
+        margin-top: 0px;
+        width: fit-content;
+        margin-left: 20px;
+        height: fit-content;
+    }
+    .carousel img  {
+        width: 25%;
+        height: 35vh; 
+    }
+
+    body {
+        background-color: #ebebeb;
+        margin-top: 11rem;
+    }
+
+    .container-body{
+        flex-direction: row;
+    }
+
+    .column-1, .column-2, .column-3, .column-4 {
+        padding-right: 50px;
+        padding-left: 50px;
+        width: 50%;  
+    }
+}
+

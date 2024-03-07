@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/lgstyles.css">
+    <title>Gorriao - Login</title>
+    <%- include('parciales/head') %>
+</head>
+
+<body>
+    <%- include('parciales/header') %>
+
+    <div class="form-container">
+        <h2>Iniciar sesión en su cuenta</h2>
+
+        <form id="loginForm" action="/login" method="post">
+            <div class="form-group">
+                <label for="dmail">Dirección de correo:</label>
+                <br>
+                <input class="log" type="email" name="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <br>
+                <input  class="log" type="password" name="password" id="password" required>
+            </div>
+
+            <div class="form-group remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Recordar mail y contraseña</label>
+            </div>
+
+            <div class="form-group">
+                <p><a href="#">¿Olvidó su contraseña?</a></p>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Ingresar" class="boton">
+            </div>
+
+            <div class="form-group">
+                <p><a href="/register">¿No tienes cuenta? Cree una aquí</a></p>
+            </div>
+        </form>
+    </div>
+
+    <%- include('parciales/footer') %>
+</body>
+
+</html>

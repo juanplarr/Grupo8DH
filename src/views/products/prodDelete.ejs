@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../.././css/caredit.css">
+    <title>Nuevo producto</title>
+    <%- include('../parciales/head2products') %>
+</head>
+
+<body>
+    <%- include('../parciales/header2products') %>
+        <main>
+            <div class="container-main">
+                <div class="container-info">
+                    <h1>¿Estas seguro/ra de querer borrar este producto: <%= productoDel.nombreproducto %>?</h1>
+                    <p>
+
+                    <br>
+                    <form action="/products/prodDestroy/<%= productoDel.id %>" method="GET">
+                        <button class="btn btn-danger" type="submit">Borrar el producto</button>
+                    </form>
+                    <br>
+
+                    </p>
+                    <a href="/product" class="btn btn-danger">Volver</a>
+                </div>
+            </div>
+        </main>
+
+        <%- include('../parciales/footer') %>
+</body>
+
+</html>
