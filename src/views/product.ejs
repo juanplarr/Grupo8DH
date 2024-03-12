@@ -18,7 +18,7 @@
         <br>
         <section class="row">
             <article class="col-12">
-                <a href="/caredit" class="add-link"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
+                <a href="/caredit3" class="add-link"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
             </article>
             <article class="col-12">
                 <table class="table">
@@ -36,8 +36,8 @@
                         <% productosL.forEach(producto => { %>
                         <tr>
                             <td><%= producto.id%> </td>
-                            <td><%= producto.nombreproducto%> </td>
-                            <td><img src="/images/productos/<%= producto.avatar%>" alt="<%= producto.nombreproducto %>"></td>
+                            <td><%= producto.nombre%> </td>
+                            <td><img src="/images/productos/<%= producto.urlImagen%>" alt="<%= producto.nombre %>"></td>
                             <td><a href="/products/prodDetail/<%= producto.id%> "><ion-icon name="eye-outline"></ion-icon></a></td>
                             <td><a href="/products/prodEdit/<%= producto.id%> "><ion-icon name="pencil-outline"></ion-icon></a></td>
                             <td><a href="/products/prodDelete/<%= producto.id%> "><ion-icon name="trash-outline"></ion-icon></a></td>

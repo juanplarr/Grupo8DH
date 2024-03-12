@@ -1,4 +1,4 @@
-const express = require ('express');
+const express = require('express');
 const productRoutes = express.Router();
 const path = require('path');
 const multer = require('multer');
@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({storage});
+const upload = multer({ storage });
 
 //importar el controlador
 const productController = require('../controllers/productController');
@@ -24,7 +24,10 @@ productRoutes.get('/product', productController.product);
 productRoutes.get('/productclient', productController.productclient);
 productRoutes.get('/caredit', productController.caredit);
 productRoutes.get('/caredit2', productController.caredit2);
-//productRoutes.get('/caredit', productController.create);
+//Nuevo -
+productRoutes.get('/caredit3', productController.caredit3);
+productRoutes.post('/create', upload.single('urlImagen'), productController.create);
+//Hasta aqui -
 productRoutes.post('/caredit', upload.single('avatar'), productController.save);
 productRoutes.get('/products/prodDetail/:id', productController.show);
 productRoutes.get('/products/prodEdit/:id', productController.edit);

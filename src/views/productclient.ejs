@@ -35,9 +35,9 @@
             <% productosL.forEach(producto => { %>
                 <article class="producto">
                     <a href="/products/prodDetail/<%= producto.id %>">
-                        <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                        <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                     </a>
-                    <h3 class="nombreprodu"><%= producto.nombreproducto%> </h3>
+                    <h3 class="nombreprodu"><%= producto.nombre%> </h3>
                     <div class="preciototal">
                         <p id="precios">$<%= producto.precio%> </p>
                     </div>

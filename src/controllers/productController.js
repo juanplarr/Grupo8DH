@@ -1,28 +1,77 @@
 const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
+const db = require("../database/models");
+const Producto = db.Producto
+const Categoria = db.Categoria
+
 
 module.exports = {
   carrito: (req, res) => {
     res.render(path.resolve(__dirname, "../views/carrito.ejs"));
   },
 
-  product: (req, res) => {
+  product: async (req, res) => {
+    try {
+      /* let productosL = JSON.parse(
+        fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
+      ); */
+      let productosL = await Producto.findAll();
+
+      res.render("product", { productosL });
+    } catch (error) {
+      console.log(error);
+    }
     //res.render(path.resolve(__dirname, '../views/product.ejs'))
-    let productosL = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-    );
-    res.render(path.resolve(__dirname, "../views/product"), { productosL });
+
   },
 
-  productclient: (req, res) => {
+  productclient: async (req, res) => {
+    try {
+      /* let productosL = JSON.parse(
+        fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
+      ); */
+      let productosL = await Producto.findAll();
+      //console.log(productosL)
+      res.render("productclient", { productosL });
+    } catch (error) {
+      console.log(error);
+    }
     //res.render(path.resolve(__dirname, '../views/product.ejs'))
-    let productosL = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-    );
-    res.render(path.resolve(__dirname, "../views/productclient"), {
-      productosL,
-    });
+
+  },
+
+  caredit3: async (req, res) => {
+    try {
+      let categoriaL = await Categoria.findAll();
+      //res.render(path.resolve(__dirname, "../views/caredit3.ejs"));
+      res.render("caredit3", { categoriaL });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  create: async (req, res) => {
+    let productosL = await Producto.findAll();
+    let ultimoElemento = productosL.pop();
+    let nuevoId = ultimoElemento ? ultimoElemento.id + 1 : 1;
+    try {
+      await Producto.create({
+        id: nuevoId,
+        nombre: req.body.nombre,
+        precio: req.body.precio,
+        detalle: req.body.detalle,
+        precioCompra: req.body.precioCompra,
+        stock: req.body.stock,
+        urlImagen: req.file.filename,
+        estado: req.body.estado,
+        precioMay: req.body.precioMay,
+        categoriaId: req.body.categoriaId,
+      })
+      await res.redirect('/product')
+    } catch (error) {
+      res.send(`Uff, ha ocurrido un error  ${error.message}$`);
+    }
   },
 
   caredit: (req, res) => {
