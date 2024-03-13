@@ -115,21 +115,32 @@ module.exports = {
     );
     res.redirect("/product");
   },
-  show: (req, res) => {
-    let productosL = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-    );
-    let id = req.params.id;
-    let miProducto;
-    productosL.forEach((producto) => {
-      if (producto.id == id) {
-        miProducto = producto;
+  show: async (req, res) => {
+    try {
+      const id = req.params.id;
+      const producto = await Producto.findByPk(id, {
+        include: [{
+          model: Categoria,
+          as: "Categoria"
+        }, {
+          model: ProductoCarrito,
+          as: "ProductosCarrito"
+        }]
+      });
+  
+      if (!producto) {
+        return res.status(404).send("Producto no encontrado");
       }
-    });
-    res.render(path.resolve(__dirname, "../views/products/prodDetail.ejs"), {
-      miProducto,
-    });
+  
+      res.render(path.resolve(__dirname, "products/prodDetail.ejs"), {
+        miProducto: producto,
+      });
+    } catch (error) {
+      console.error("Error al buscar el producto:", error);
+      res.status(500).send("Error interno del servidor");
+    }
   },
+
   edit: (req, res) => {
     let productosL = JSON.parse(
       fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
