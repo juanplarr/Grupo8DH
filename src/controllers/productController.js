@@ -2,9 +2,9 @@ const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
 const db = require("../database/models");
-const Producto = db.Producto
-const Categoria = db.Categoria
-
+const Producto = db.Producto;
+const Categoria = db.Categoria;
+const ProductoCarrito = db.ProductoCarrito;
 
 module.exports = {
   carrito: (req, res) => {
@@ -23,7 +23,6 @@ module.exports = {
       console.log(error);
     }
     //res.render(path.resolve(__dirname, '../views/product.ejs'))
-
   },
 
   productclient: async (req, res) => {
@@ -38,7 +37,6 @@ module.exports = {
       console.log(error);
     }
     //res.render(path.resolve(__dirname, '../views/product.ejs'))
-
   },
 
   caredit3: async (req, res) => {
@@ -67,8 +65,8 @@ module.exports = {
         estado: req.body.estado,
         precioMay: req.body.precioMay,
         categoriaId: req.body.categoriaId,
-      })
-      await res.redirect('/product')
+      });
+      await res.redirect("/product");
     } catch (error) {
       res.send(`Uff, ha ocurrido un error  ${error.message}$`);
     }
@@ -118,21 +116,26 @@ module.exports = {
   show: async (req, res) => {
     try {
       const id = req.params.id;
+      console.log(id);
       const producto = await Producto.findByPk(id, {
-        include: [{
-          model: Categoria,
-          as: "Categoria"
-        }, {
-          model: ProductoCarrito,
-          as: "ProductosCarrito"
-        }]
+        include: [
+          {
+            model: Categoria,
+            as: "Categoria",
+          },
+          {
+            model: ProductoCarrito, //Les falto crear esa variable (revisar linea 5 y 6)
+            as: "ProductosCarrito",
+          },
+        ],
       });
-  
+      console.log(producto);
+
       if (!producto) {
         return res.status(404).send("Producto no encontrado");
       }
-  
-      res.render(path.resolve(__dirname, "products/prodDetail.ejs"), {
+
+      res.render("products/prodDetail.ejs", {
         miProducto: producto,
       });
     } catch (error) {
