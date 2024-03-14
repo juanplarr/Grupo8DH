@@ -73,11 +73,8 @@ module.exports = {
     }
   },
   profile: (req, res) => {
-    let usuarios = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/usuarios.json"))
-    );
     return res.render(path.resolve(__dirname, "../views/profile.ejs"), {
-      usuarios: usuarios,
+      usuarios: req.session.usuarioLogueado,
     });
   },
   logout: (req, res) => {
