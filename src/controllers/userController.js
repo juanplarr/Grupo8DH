@@ -55,13 +55,13 @@ module.exports = {
       usuarioLogin &&
       bccrypt.compareSync(req.body.password, usuarioLogin.password)
     ) {
-      res.redirect("/");
       req.session.usuarioLogueado = usuarioLogin;
 
       //cookie
       if (req.body.remember != undefined) {
         res.cookie("recordame", usuarioLogin.email, { maxAge: 60000 });
       }
+      res.redirect("/");
     } else {
       return res.render(path.resolve(__dirname, "../views/login.ejs"), {
         errors: [
