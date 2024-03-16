@@ -22,13 +22,10 @@ const productController = require('../controllers/productController');
 productRoutes.get('/carrito', productController.carrito);
 productRoutes.get('/product', productController.product);
 productRoutes.get('/productclient', productController.productclient);
-productRoutes.get('/caredit', productController.caredit);
-productRoutes.get('/caredit2', productController.caredit2);
 //Nuevo -
-productRoutes.get('/caredit3', productController.caredit3);
+productRoutes.get('/caredit', productController.caredit);
 productRoutes.post('/create', upload.single('urlImagen'), productController.create);
 //Hasta aqui -
-productRoutes.post('/caredit', upload.single('avatar'), productController.save);
 productRoutes.get('/products/prodDetail/:id', productController.show);
 productRoutes.get('/products/prodEdit/:id', productController.edit);
 productRoutes.put('/products/prodEdit/:id', upload.single('avatar'), productController.update);

@@ -10,58 +10,94 @@
 </head>
 
 <%- include('parciales/header') %>
-<body>
-    <main class="container-fluid"> 
-        <div class="caredit-form">
-            <div class="formingreso">
-                <form action="/caredit" method="POST" enctype="multipart/form-data">
-                    <div class="form-container">
-    
-                        <label for="nombreproducto" class="formu">Nombre del producto</label>
-                        <input type="text" name="nombreproducto" id="nombreproducto" class="texto" required="required" placeholder="Ingrese el nombre del producto">
-    
-                        <label for="marca" class="formu">Marca</label>
-                        <input type="text" name="marca" id="marca" class="texto" required="required" placeholder="Ingrese la marca del producto">
-    
-                        <label for="descripcion" class="formu">Descripción</label>
-                        <input type="text" name="descripcion" id="descripcion" class="texto" required="required" placeholder="Ingrese la descripción del producto">
-    
-                        <label for="precio" class="formu">Precio</label>
-                        <input type="number" name="precio" id="precio" class="texto" required="required" placeholder="Ingrese el precio del producto">
-    
-                        <label class="formu">Tipo de producto</label>
-                        <ul class="categorias">
-                            <li>Gorra: <input type="radio" name="tipoDeProducto" value="gorra" checked></li>
-                            <li>Aritos: <input type="radio" name="tipoDeProducto" value="arito"></li>
-                            <li>Cinturon: <input type="radio" name="tipoDeProducto" value="cinturon"></li>
-                            <li>Colgante: <input type="radio" name="tipoDeProducto" value="colgante"></li>
-                            <li>Cartera: <input type="radio" name="tipoDeProducto" value="cartera"></li>
-                        </ul>
-                        
-                        <label class="formu">Selecciona una foto para tu producto</label>
-                        <input type="file" name="avatar" id="avatar" accept="image/*">
-    
-                        <div class="botonespie">
-                            <div class="form-group">
+
+    <body>
+        <main class="container-fluid">
+            <div class="caredit-form">
+                <div class="formingreso">
+                    <form action="/create" method="POST" enctype="multipart/form-data">
+                        <div class="form-container">
+
+                            <label for="nombre" class="formu">Nombre del producto</label>
+                            <input type="text" name="nombre" id="nombre" class="texto" required="required"
+                                placeholder="Ingrese el nombre del producto">
+
+                            <label for="precio" class="formu">Precio</label>
+                            <input type="number" name="precio" id="precio" class="texto" required="required"
+                                placeholder="Ingrese el precio del producto">
+
+                            <label for="detalle" class="formu">Descripción</label>
+                            <input type="text" name="detalle" id="detalle" class="texto" required="required"
+                                placeholder="Ingrese la descripción del producto">
+
+                            <label for="precioCompra" class="formu"> Precio Compra </label>
+                            <input type="number" name="precioCompra" id="precioCompra" class="texto" required="required"
+                                placeholder="Ingrese el precio de compra del producto">
+
+                            <label for="stock" class="formu"> Stock </label>
+                            <input type="number" name="stock" id="stock" class="texto" required="required"
+                                placeholder="Ingrese el stock del producto">
+
+                            <label class="formu">Selecciona una foto para tu producto</label>
+                            <input type="file" name="urlImagen" id="urlImagen" accept="image/*">
+
+                            <label for="estado" class="formu"> Estado </label>
+                            <input type="radio" name="estado" id="estado_true" value="1" class="texto"
+                                required="required">
+                            <label for="estado_true"> Activo </label>
+                            <input type="radio" name="estado" id="estado_false" value="0" class="texto"
+                                required="required">
+                            <label for="estado_false"> Inactivo </label>
+
+                            <label for="precioMay" class="formu"> Precio Mayorista </label>
+                            <input type="number" name="precioMay" id="precioMay" class="texto" required="required"
+                                placeholder="Ingrese el precio mayorista del producto">
+
+
+                            <label for="marca" class="formu">Marca</label>
+                            <input type="text" name="marca" id="marca" class="texto" required="required"
+                                placeholder="Ingrese la marca del producto">
+
+
+
+
+                            <label class="formu"> Tipo de producto... </label>
+                            <label class="categorias"> Categorias </label>
+                            <p>
+                                <select name="categoriaId" id="">
+                                    <option value="" disabled selected>- Seleciona categoria - </option>
+                                    <% categoriaL.forEach(categoria=> { %>
+                                        <option value="<%= categoria.id %>">
+                                            <%= categoria.nombre %>
+                                        </option>
+                                        <% }); %>
+                                </select>
+                            </p>
+                            <br>
+
+
+
+                            <div class="botonespie">
+                                <div class="form-group">
+                                    <p>
+                                        <button type="submit" class="btn btn btn-info">Enviar</button>
+                                    </p>
+                                </div>
+
                                 <p>
-                                    <button type="submit" class="btn btn btn-info">Enviar</button>
+                                    <button class="btn btn-info" type="reset">Reiniciar</button>
                                 </p>
                             </div>
-    
-                            <p>
-                                <button class="btn btn-info" type="reset">Reiniciar</button>
-                            </p>
-                        </div>
-                        <br>
-                        <a href="/product" class="btn btn-danger">Volver</a>
-    
-                    </div>
-                </form>
-            </div>
-        </div>
-    </main>
-</body>
+                            <br>
+                            <a href="/product" class="btn btn-danger">Volver</a>
 
-<%- include('parciales/footer') %>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+
+    <%- include('parciales/footer') %>
 
 </html>
