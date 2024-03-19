@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Gorriao - Inicio</title>
+    <%- include('../parciales/head') %>
+</head>
+
+<body>
+    <%- include('../parciales/header') %>
+
+        <figure class="banner-1">
+            <img src="img/gorrabanner.jpg" class="bannerdestacado">
+        </figure>
+
+        <div class="categorias">
+            <div class="box">
+                <a href="/gorras">GORRAS</a>
+                <a href="/aritos" class="left">ARITOS</a>
+                <a href="/cinturones" class="left">CINTURONES</a>
+                <a href="/colgantes" class="left">COLGANTES</a>
+                <a href="/bandoleras" class="left">BANDOLERAS</a>
+                <a href="/carteras" class="left">CARTERAS</a>
+            </div>
+
+        </div>
+
+
+
+        <main>
+
+            <h1>¡CINTURONES!</h1>
+
+            <section class="cajaproductos">
+                <% productosL.forEach(producto=> { %>
+                    <% if (producto.categoriaId==3) { %>
+                        <article class="producto">
+                            <div class="articulos">
+
+                                <a href="/products/prodDetail/<%= producto.id %>">
+                                    <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
+                                </a>
+                                <h3 class="nombreprodu">
+                                    <%= producto.nombre%>
+                                </h3>
+                                <div class="preciototal">
+                                    <p id="precios">$<%= producto.precio%>
+                                    </p>
+                                    <p id="descuentos"></p>
+                                </div>
+                                <% } %>
+
+                            </div>
+                        </article>
+                        <% }); %>
+
+            </section>
+
+        </main>
+
+        <figure class="banner">
+            <img src="img/gorrabanner2.jpg" class="bannerdestacado">
+        </figure>
+
+
+
+</body>
+<%- include('../parciales/footer') %>
+
+</html>

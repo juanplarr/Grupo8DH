@@ -1,24 +1,70 @@
 const path = require("path");
 const fs = require("fs");
-
+const multer = require("multer");
 const db = require("../database/models");
+const Producto = db.Producto;
 
 module.exports = {
   index: async (req, res) => {
     try {
-      let productos = await db.Producto.findAll({ include: ["Categoria"] });
-      //return res.json(productos);
-      console.log("Productos", productos);
-
-      /* let productosL = await db.Producto.findAll() */
-
-      let productosL = JSON.parse(
-        fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-      );
-      // res.render(path.resolve(__dirname, "../views/home.ejs"), { productosL });
-      res.render("home.ejs", { productosL }); //al configurar la ubicacion de views, no hace falta pasarle la ruta absoluta al ejs
+      let productosL = await Producto.findAll();
+      res.render("home", { productosL });
     } catch (error) {
       console.log(error);
     }
   },
+
+  aritos: async (req, res) => {
+    try {
+      let productosL = await Producto.findAll();
+      res.render("categorias/aritos", { productosL });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  bandoleras: async (req, res) => {
+    try {
+      let productosL = await Producto.findAll();
+      res.render("categorias/bandoleras", { productosL });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  carteras: async (req, res) => {
+    try {
+      let productosL = await Producto.findAll();
+      res.render("categorias/carteras", { productosL });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  cinturones: async (req, res) => {
+    try {
+      let productosL = await Producto.findAll();
+      res.render("categorias/cinturones", { productosL });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  colgantes: async (req, res) => {
+    try {
+      let productosL = await Producto.findAll();
+      res.render("categorias/colgantes", { productosL });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  gorras: async (req, res) => {
+    try {
+      let productosL = await Producto.findAll();
+      res.render("categorias/gorras", { productosL });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };

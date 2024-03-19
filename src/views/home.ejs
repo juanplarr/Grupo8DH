@@ -17,11 +17,12 @@
 
     <div class="categorias">
         <div class="box">
-            <a href="#">GORRAS</a>
-            <a href="#" class="left">ARITOS</a>
-            <a href="#" class="left">CINTURONES</a>
-            <a href="#" class="left">COLGANTES</a>
-            <a href="#" class="left">BANDOLERAS/CARTERAS</a>
+            <a href="/gorras">GORRAS</a>
+            <a href="/aritos" class="left">ARITOS</a>
+            <a href="/cinturones" class="left">CINTURONES</a>
+            <a href="/colgantes" class="left">COLGANTES</a>
+            <a href="/bandoleras" class="left">BANDOLERAS</a>
+            <a href="/carteras" class="left">CARTERAS</a>
         </div>
 
     </div>
@@ -38,9 +39,9 @@
                 <% productosL.forEach(producto => { %>
                     <% if (producto.id == 1) { %>
                         <a href="/products/prodDetail/<%= producto.id %>">
-                            <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                            <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                         </a>
-                        <h3 class="nombreprodu"><%= producto.nombreproducto%> </h3>
+                        <h3 class="nombreprodu"><%= producto.nombre%> </h3>
                         <div class="preciototal">
                             <p id="precios">$<%= producto.precio%> </p>
                             <p id="descuentos">40% off</p>
@@ -55,9 +56,9 @@
                     <% productosL.forEach(producto => { %>
                         <% if (producto.id == 2) { %>
                             <a href="/products/prodDetail/<%= producto.id %>">
-                                <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                                <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                             </a>
-                            <h3 class="nombreprodu"><%= producto.nombreproducto %> </h3>
+                            <h3 class="nombreprodu"><%= producto.nombre %> </h3>
                             <div class="preciototal">
                                 <p id="precios">$<%= producto.precio %> </p>
                                 <p id="descuentos">40% off</p>
@@ -73,9 +74,9 @@
                     <% productosL.forEach(producto => { %>
                         <% if (producto.id == 3) { %>
                             <a href="/products/prodDetail/<%= producto.id %>">
-                                <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                                <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                             </a>
-                            <h3 class="nombreprodu"><%= producto.nombreproducto %> </h3>
+                            <h3 class="nombreprodu"><%= producto.nombre %> </h3>
                             <div class="preciototal">
                                 <p id="precios">$<%= producto.precio %> </p>
                                 <p id="descuentos">40% off</p>
@@ -90,9 +91,9 @@
                     <% productosL.forEach(producto => { %>
                         <% if (producto.id == 6) { %>
                             <a href="/products/prodDetail/<%= producto.id %>">
-                                <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                                <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                             </a>
-                            <h3 class="nombreprodu"><%= producto.nombreproducto %> </h3>
+                            <h3 class="nombreprodu"><%= producto.nombre %> </h3>
                             <div class="preciototal">
                                 <p id="precios">$<%= producto.precio %> </p>
                                 <p id="descuentos">40% off</p>
@@ -107,9 +108,9 @@
                     <% productosL.forEach(producto => { %>
                         <% if (producto.id == 7) { %>
                             <a href="/products/prodDetail/<%= producto.id %>">
-                                <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                                <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                             </a>
-                            <h3 class="nombreprodu"><%= producto.nombreproducto %> </h3>
+                            <h3 class="nombreprodu"><%= producto.nombre %> </h3>
                             <div class="preciototal">
                                 <p id="precios">$<%= producto.precio %> </p>
                                 <p id="descuentos">40% off</p>
@@ -124,9 +125,9 @@
                     <% productosL.forEach(producto => { %>
                         <% if (producto.id == 8) { %>
                             <a href="/products/prodDetail/<%= producto.id %>">
-                                <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                                <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                             </a>
-                            <h3 class="nombreprodu"><%= producto.nombreproducto %> </h3>
+                            <h3 class="nombreprodu"><%= producto.nombre %> </h3>
                             <div class="preciototal">
                                 <p id="precios">$<%= producto.precio %> </p>
                                 <p id="descuentos">40% off</p>
@@ -141,9 +142,9 @@
                     <% productosL.forEach(producto => { %>
                         <% if (producto.id == 9) { %>
                             <a href="/products/prodDetail/<%= producto.id %>">
-                                <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                                <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                             </a>
-                            <h3 class="nombreprodu"><%= producto.nombreproducto %> </h3>
+                            <h3 class="nombreprodu"><%= producto.nombre %> </h3>
                             <div class="preciototal">
                                 <p id="precios">$<%= producto.precio %> </p>
                                 <p id="descuentos">40% off</p>
@@ -158,9 +159,9 @@
                     <% productosL.forEach(producto => { %>
                         <% if (producto.id == 4) { %>
                             <a href="/products/prodDetail/<%= producto.id %>">
-                                <img src="/images/productos/<%= producto.avatar %>" alt="<%= producto.nombreproducto %>">
+                                <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
                             </a>
-                            <h3 class="nombreprodu"><%= producto.nombreproducto %> </h3>
+                            <h3 class="nombreprodu"><%= producto.nombre %> </h3>
                             <div class="preciototal">
                                 <p id="precios">$<%= producto.precio %> </p>
                                 <p id="descuentos">40% off</p>
