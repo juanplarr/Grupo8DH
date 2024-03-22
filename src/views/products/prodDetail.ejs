@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/css/caredit.css" />
-    <title>Nuevo producto</title>
-    <%- include('../parciales/head2products') %>
-  </head>
 
-  <body>
-    <%- include('../parciales/header2products') %>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/css/caredit.css" />
+  <title>Nuevo producto</title>
+  <%- include('../parciales/head2products') %>
+</head>
+
+<body>
+  <%- include('../parciales/header2products') %>
     <main>
       <div class="container-main">
         <div class="container-imgs">
-                     <div class="container-principal">
-              <img src="/images/productos/<%= miProducto.urlImagen%>" alt="404">
+          <div class="container-principal">
+            <img src="/images/productos/<%= miProducto.urlImagen%>" alt="404">
           </div>
           <!--
           <div class="container-secondary">
@@ -21,39 +22,27 @@
               <img src="img/gorramorada.jpg" alt="404">
               <img src="img/gorramorada.jpg" alt="404">
           </div>
-        --></div>
+        -->
+        </div>
 
         <div class="container-info">
-          <h2><%= miProducto.nombre %></h2>
-          <h4>$ <%= miProducto.precio %></h4>
+          <h2>
+            <%= miProducto.nombre %>
+          </h2>
+          <h4>$ <%= miProducto.precio %>
+          </h4>
 
-          <h3><%= miProducto.detalle %></h3>
+          <h3>
+            <%= miProducto.detalle %>
+          </h3>
 
           <div class="selector-color">
             <h3>Color:</h3>
-            <input
-              type="radio"
-              id="color-azul"
-              name="color"
-              value="azul"
-              placeholder=""
-            />
+            <input type="radio" id="color-azul" name="color" value="azul" placeholder="" />
 
-            <input
-              type="radio"
-              id="color-rojo"
-              name="color"
-              value="rojo"
-              placeholder=""
-            />
+            <input type="radio" id="color-rojo" name="color" value="rojo" placeholder="" />
 
-            <input
-              type="radio"
-              id="color-violeta"
-              name="color"
-              value="violeta"
-              placeholder=""
-            />
+            <input type="radio" id="color-violeta" name="color" value="violeta" placeholder="" />
           </div>
 
           <div class="buttons-zone">
@@ -96,5 +85,6 @@
     </main>
 
     <%- include('../parciales/footer') %>
-  </body>
+</body>
+
 </html>

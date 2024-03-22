@@ -144,77 +144,79 @@ module.exports = {
     }
   },
 
-  edit: (req, res) => {
-    let productosL = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-    );
-    let id = req.params.id;
-    let productoEditar = productosL.find((producto) => {
-      return producto.id == id;
-    });
-    res.render(path.resolve(__dirname, "../views/products/prodEdit.ejs"), {
-      productoEditar,
-    });
-  },
-  update: [
-    //upload.single('avatar'),
-    (req, res) => {
-      console.log(req.body);
-      let productosL = JSON.parse(
-        fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-      );
-      let id = req.params.id;
-      req.body.id = id;
-      req.body.id = parseInt(req.body.id);
-
-      // Verificar si se cargó un archivo
-      if (req.file) {
-        //const extension = path.extname(req.file.originalname);
-        //req.body.avatar = req.file.filename + extension;
-        req.body.avatar = req.file.filename;
-      }
-
-      let productosActualizar = productosL.map((producto) => {
-        if (producto.id == id) {
-          return req.body;
+  edit: async (req, res) => {
+    try {
+        const id = req.params.id;
+        const productoEditar = await Producto.findByPk(id); // Buscar el producto por su clave primaria
+        if (!productoEditar) {
+            return res.status(404).send("Producto no encontrado"); // Si no se encuentra el producto, devolver un error 404
         }
-        return producto;
+        res.render("products/prodEdit.ejs", { productoEditar });
+    } catch (error) {
+        console.error("Error al editar el producto:", error);
+        res.status(500).send("Error interno del servidor");
+    }
+},
+
+update: async (req, res) => {
+  try {
+      const id = req.params.id;
+
+      // Actualizar los campos del producto con los valores proporcionados en req.body
+      await Producto.update({
+          nombre: req.body.nombre,
+          precio: req.body.precio,
+          detalle: req.body.detalle,
+          precioCompra: req.body.precioCompra,
+          stock: req.body.stock,
+          urlImagen: req.body.urlImagen,
+          estado: req.body.estado,
+          precioMay: req.body.precioMay,
+          categoriaId: req.body.categoriaId
+      }, {
+          where: {
+              id: id
+          }
       });
 
-      let productoYaActualizado = JSON.stringify(productosActualizar, null, 2);
-      fs.writeFileSync(
-        path.resolve(__dirname, "../JSON/productos.json"),
-        productoYaActualizado
-      );
+      res.redirect('/productos'); // Redirigir a la página de productos después de la actualización
+  } catch (error) {
+      console.error("Error al actualizar el producto:", error);
+      res.status(500).send("Error interno del servidor");
+  }
+},
 
-      res.redirect("/product");
-    },
-  ],
-  delete: function (req, res) {
-    let productosL = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-    );
-    let productId = req.params.id;
-    let productoDel = productosL.find((producto) => producto.id == productId);
+delete: async (req, res) => {
+  try {
+      const productId = req.params.id;
 
-    if (!productoDel) {
-      return res.status(404).send("Producto no encontrado");
-    }
-    res.render(path.resolve(__dirname, "../views/products/prodDelete.ejs"), {
-      productoDel,
-    });
-  },
-  destroy: (req, res) => {
-    let productosL = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-    );
-    let id = req.params.id;
-    let productosFinal = productosL.filter((producto) => producto.id != id);
-    let productoGuardarFinal = JSON.stringify(productosFinal, null, 2);
-    fs.writeFileSync(
-      path.resolve(__dirname, "../JSON/productos.json"),
-      productoGuardarFinal
-    );
-    res.redirect("/product");
-  },
+      const productoDel = await Producto.findByPk(productId);
+
+      if (!productoDel) {
+          return res.status(404).send("Producto no encontrado");
+      }
+
+      res.render("products/prodDelete.ejs", { productoDel });
+  } catch (error) {
+      console.error("Error al eliminar el producto:", error);
+      res.status(500).send("Error interno del servidor");
+  }
+}
+,
+destroy: async (req, res) => {
+  try {
+      const id = req.params.id;
+      await db.Producto.destroy({
+          where: {
+              id: id
+          }
+      });
+
+      res.redirect("/productos"); 
+  } catch (error) {
+      console.error("Error al eliminar el producto:", error);
+      res.status(500).send("Error interno del servidor");
+  }
+}
+
 };
