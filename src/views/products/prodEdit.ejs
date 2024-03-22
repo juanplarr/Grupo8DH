@@ -16,34 +16,22 @@
                     <form action="/products/prodEdit/<%= productoEditar.id%>?_method=PUT
                         " method="POST" enctype="multipart/form-data">
                         <div class="form-container">
-
+                            
                             <input type="hidden" name="id" value="<%= productoEditar.id %>">
 
                             <label for="nombreproducto" class="formu">Nombre del producto</label>
                             <input type="text" name="nombreproducto" id="nombreproducto" class="texto"
                                 required="required" placeholder="Ingrese el nombre del producto"
-                                value="<%= productoEditar.nombre%>">
+                                value="<%= productoEditar.nombreproducto%>">
 
-                            <!-- <label for="marca" class="formu">Marca</label>
+                            <label for="marca" class="formu">Marca</label>
                             <input type="text" name="marca" id="marca" class="texto" required="required"
-                                placeholder="Ingrese la marca del producto" value="<%= productoEditar.marca%>"> -->
+                                placeholder="Ingrese la marca del producto" value="<%= productoEditar.marca%>">
 
                             <label for="descripcion" class="formu">Descripción</label>
                             <input type="text" name="descripcion" id="descripcion" class="texto" required="required"
-                                placeholder="Ingrese la descripción del producto" value="<%= productoEditar.detalle%>">
-
-                            <label for="precioCompra" class="formu">Precio de Compra</label>
-                            <input type="text" name="precioCompra" id="precioCompra" class="texto" required="required"
                                 placeholder="Ingrese la descripción del producto"
-                                value="<%= productoEditar.precioCompra%>">
-
-                            <label for="stock" class="formu">Stock</label>
-                            <input type="text" name="stock" id="stock" class="texto" required="required"
-                                placeholder="Ingrese la descripción del producto" value="<%= productoEditar.stock%>">
-
-                                <label for="precioMayorista" class="formu">Precio Mayorista</label>
-                            <input type="text" name="precioMayorista" id="precioMayorista" class="texto" required="required"
-                                placeholder="Ingrese la descripción del producto" value="<%= productoEditar.precioMay%>">
+                                value="<%= productoEditar.descripcion%>">
 
                             <label for="precio" class="formu">Precio</label>
                             <input type="number" name="precio" id="precio" class="texto" required="required"
@@ -52,15 +40,15 @@
                             <label class="formu">Tipo de producto</label>
                             <ul class="categorias">
                                 <li>Gorra: <input type="radio" name="tipoDeProducto" value="gorra"
-                                        <%=productoEditar.tipoDeProducto=="gorra" ? 'checked' : '' %>></li>
+                                        <%= productoEditar.tipoDeProducto == "gorra" ? 'checked' : '' %>></li>
                                 <li>Aritos: <input type="radio" name="tipoDeProducto" value="arito"
-                                        <%=productoEditar.tipoDeProducto=="arito" ? 'checked' : '' %>></li>
+                                        <%= productoEditar.tipoDeProducto == "arito" ? 'checked' : '' %>></li>
                                 <li>Cinturon: <input type="radio" name="tipoDeProducto" value="cinturon"
-                                        <%=productoEditar.tipoDeProducto=="cinturon" ? 'checked' : '' %>></li>
+                                        <%= productoEditar.tipoDeProducto == "cinturon" ? 'checked' : '' %>></li>
                                 <li>Colgante: <input type="radio" name="tipoDeProducto" value="colgante"
-                                        <%=productoEditar.tipoDeProducto=="colgante" ? 'checked' : '' %>></li>
+                                        <%= productoEditar.tipoDeProducto == "colgante" ? 'checked' : '' %>></li>
                                 <li>Cartera: <input type="radio" name="tipoDeProducto" value="cartera"
-                                        <%=productoEditar.tipoDeProducto=="cartera" ? 'checked' : '' %>></li>
+                                        <%= productoEditar.tipoDeProducto == "cartera" ? 'checked' : '' %>></li>
                             </ul>
 
 

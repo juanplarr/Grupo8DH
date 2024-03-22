@@ -6,7 +6,6 @@ const { body, check, validationResult } = require("express-validator");
 const multer = require("multer");
 const bcrypt = require("bcryptjs");
 const usuarioLogueado = require ('../middlewares/usuarioLogueado');
-const usuarioNoLog = require('../middlewares/usuarioNoLog')
 
 let archivoUsuarios = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "../JSON/usuarios.json"))
@@ -92,9 +91,14 @@ const validacionesLogin = [
 const userController = require("../controllers/userController");
 
 userRoutes.get("/register", usuarioLogueado, userController.register);
-userRoutes.post("/register", upload.single("avatar"), validaciones, userController.create);
+userRoutes.post(
+  "/register",
+  upload.single("avatar"),
+  validaciones,
+  userController.create
+);
 userRoutes.get("/login", usuarioLogueado, userController.login);
 userRoutes.post("/login", validacionesLogin, userController.ingresar);
-userRoutes.get("/profile", usuarioNoLog, userController.profile);
+userRoutes.get("/profile", userController.profile);
 
 module.exports = userRoutes;

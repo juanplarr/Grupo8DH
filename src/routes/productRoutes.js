@@ -2,7 +2,6 @@ const express = require('express');
 const productRoutes = express.Router();
 const path = require('path');
 const multer = require('multer');
-const admin = require('../middlewares/admin')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -25,9 +24,6 @@ productRoutes.get('/product', productController.product);
 productRoutes.get('/productclient', productController.productclient);
 //Nuevo -
 productRoutes.get('/caredit', productController.caredit);
-productRoutes.get('/caredit2', productController.caredit2);
-//Nuevo -
-productRoutes.get('/caredit3', productController.caredit3);
 productRoutes.post('/create', upload.single('urlImagen'), productController.create);
 //Hasta aqui -
 productRoutes.get('/products/prodDetail/:id', productController.show);
