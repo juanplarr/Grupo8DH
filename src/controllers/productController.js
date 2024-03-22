@@ -39,11 +39,11 @@ module.exports = {
     //res.render(path.resolve(__dirname, '../views/product.ejs'))
   },
 
-  caredit3: async (req, res) => {
+  caredit: async (req, res) => {
     try {
       let categoriaL = await Categoria.findAll();
       //res.render(path.resolve(__dirname, "../views/caredit3.ejs"));
-      res.render("caredit3", { categoriaL });
+      res.render("caredit", { categoriaL });
     } catch (error) {
       console.log(error);
     }
@@ -72,47 +72,6 @@ module.exports = {
     }
   },
 
-  caredit: (req, res) => {
-    res.render(path.resolve(__dirname, "../views/caredit.ejs"));
-  },
-
-  caredit2: (req, res) => {
-    res.render(path.resolve(__dirname, "../views/caredit2.ejs"));
-  },
-  //create: (req,res) => {
-  //    res.render(path.resolve(__dirname, '../views/caredit.ejs'));
-  //},
-  save: (req, res) => {
-    //Recibir datos del Front-end al Backend: Formulario (req.body)
-    //Query strings: req.query
-    //Cuando vienen de una etiqueta <a> Ancla req.params
-    //console.log(req.body);
-    let productosL = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/productos.json"))
-    );
-    let ultimoElemento = productosL.pop();
-    productosL.push(ultimoElemento);
-    let nuevoProducto = {
-      id: ultimoElemento.id + 1,
-      nombreproducto: req.body.nombreproducto,
-      marca: req.body.marca,
-      descripcion: req.body.descripcion,
-      precio: req.body.precio,
-      tipoDeProducto: req.body.tipoDeProducto,
-      avatar: req.file.filename,
-    };
-    //console.log(nuevoProducto)
-    //Agregamos nuestro nuevo producto al array
-    productosL.push(nuevoProducto);
-    //Convertir nuestro array a un archivo en formato json
-    let nuevoProductoGuardar = JSON.stringify(productosL, null, 2);
-    //Guardar nuestro archivo
-    fs.writeFileSync(
-      path.resolve(__dirname, "../JSON/productos.json"),
-      nuevoProductoGuardar
-    );
-    res.redirect("/product");
-  },
   show: async (req, res) => {
     try {
       const id = req.params.id;
