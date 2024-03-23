@@ -4,15 +4,18 @@ const bccrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const multer = require("multer");
 const upload = multer({ dest: "public/images" });
+const db = require("../database/models");
+const Usuario = db.Usuario;
 
 module.exports = {
   register: (req, res) => {
     res.render(path.resolve(__dirname, "../views/register.ejs"));
   },
-  create: (req, res) => {
-    let archivoUsuarios = JSON.parse(
+  create: async (req, res) => {
+    /*let archivoUsuarios = JSON.parse(
       fs.readFileSync(path.resolve(__dirname, "../JSON/usuarios.json"))
-    );
+    );*/
+    let archivoUsuarios = await Usuario.findAll();
     const errors = validationResult(req);
     if (errors.isEmpty()) {
       let usuarioNew = {
@@ -42,10 +45,8 @@ module.exports = {
   login: (req, res) => {
     res.render(path.resolve(__dirname, "../views/login.ejs"));
   },
-  ingresar: (req, res) => {
-    let archivoUsuarios = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../JSON/usuarios.json"))
-    );
+  ingresar: async (req, res) => {
+    let archivoUsuarios = await Usuario.findAll();
     let usuarioLogin = archivoUsuarios.find(
       (user) => user.email.toUpperCase() == req.body.email.toUpperCase()
     );

@@ -41,24 +41,22 @@
                             <label class="formu">Selecciona una foto para tu producto</label>
                             <input type="file" name="urlImagen" id="urlImagen" accept="image/*">
 
+                            <br>
+
                             <label for="estado" class="formu"> Estado </label>
-                            <input type="radio" name="estado" id="estado_true" value="1" class="texto"
-                                required="required">
-                            <label for="estado_true"> Activo </label>
-                            <input type="radio" name="estado" id="estado_false" value="0" class="texto"
-                                required="required">
-                            <label for="estado_false"> Inactivo </label>
+                            <div class="estado-inputs">
+                                <input type="radio" name="estado" id="estado_true" value="1" class="texto"
+                                    required="required">
+                                <label for="estado_true"> Activo </label>
+                                <input type="radio" name="estado" id="estado_false" value="0" class="texto"
+                                    required="required">
+                                <label for="estado_false"> Inactivo </label>
+                            </div>
+
 
                             <label for="precioMay" class="formu"> Precio Mayorista </label>
                             <input type="number" name="precioMay" id="precioMay" class="texto" required="required"
                                 placeholder="Ingrese el precio mayorista del producto">
-
-
-                            <label for="marca" class="formu">Marca</label>
-                            <input type="text" name="marca" id="marca" class="texto" required="required"
-                                placeholder="Ingrese la marca del producto">
-
-
 
 
                             <label class="formu"> Tipo de producto... </label>

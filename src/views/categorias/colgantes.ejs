@@ -33,30 +33,42 @@
 
             <h1>¡COLGANTES!</h1>
 
-            <section class="cajaproductos">
-                <% productosL.forEach(producto=> { %>
-                    <% if (producto.categoriaId==4) { %>
-                        <article class="producto">
-                            <div class="articulos">
+            <% if (productosL.length> 0) { %>
+                <section class="cajaproductos">
+                    <% let productosDisponibles=false; %>
+                        <% productosL.forEach(producto=> { %>
+                            <% if (producto.categoriaId==4 && producto.estado==1) { %>
+                                <% productosDisponibles=true; %>
+                                    <article class="producto">
+                                        <div class="articulos">
+                                            <a href="/products/prodDetail/<%= producto.id %>">
+                                                <img src="/images/productos/<%= producto.urlImagen %>"
+                                                    alt="<%= producto.nombre %>">
+                                            </a>
+                                            <h3 class="nombreprodu">
+                                                <%= producto.nombre %>
+                                            </h3>
+                                            <div class="preciototal">
+                                                <p id="precios">$<%= producto.precio %>
+                                                </p>
+                                                <p id="descuentos"></p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <% } %>
+                                        <% }); %>
 
-                                <a href="/products/prodDetail/<%= producto.id %>">
-                                    <img src="/images/productos/<%= producto.urlImagen %>" alt="<%= producto.nombre %>">
-                                </a>
-                                <h3 class="nombreprodu">
-                                    <%= producto.nombre%>
-                                </h3>
-                                <div class="preciototal">
-                                    <p id="precios">$<%= producto.precio%>
-                                    </p>
-                                    <p id="descuentos"></p>
-                                </div>
-                                <% } %>
-
-                            </div>
-                        </article>
-                        <% }); %>
-
-            </section>
+                                            <% if (!productosDisponibles) { %>
+                                                <div class="no-stock-message">
+                                                    <p>No queda stock, estaremos trayendo más próximamente</p>
+                                                </div>
+                                                <% } %>
+                </section>
+                <% } else { %>
+                    <div class="no-stock-message">
+                        <p>No queda stock, estaremos trayendo más próximamente</p>
+                    </div>
+                    <% } %>
 
         </main>
 

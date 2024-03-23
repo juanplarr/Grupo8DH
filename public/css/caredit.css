@@ -1,4 +1,3 @@
-
 /*===========HEADER AND BANNER===========*/
 * {
     margin: 0px;
@@ -162,7 +161,7 @@ header {
 
 .navbar li a {
     text-decoration: none;
-    color:#000000;
+    color: #000000;
 }
 
 
@@ -203,6 +202,21 @@ header {
     line-height: 40px;
 }
 
+.estado-inputs {
+    display: flex;
+    align-items: center;
+}
+
+.estado-inputs input[type="radio"] {
+    margin-right: 5px;
+}
+
+.current-image img {
+    width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
 .categorias {
     list-style: none;
 }
@@ -232,8 +246,9 @@ header {
     background-color: #e5bf91;
     color: #ffffff;
 }
+
 /*=================ProductoDetalle=================*/
-.container-main{
+.container-main {
     display: flex;
     flex-direction: column;
     width: 90vw;
@@ -242,7 +257,7 @@ header {
     margin-bottom: 50px;
 }
 
-    /* Imagen Principal */
+/* Imagen Principal */
 .container-principal img {
     border: 1px solid black;
     border-radius: 18px;
@@ -250,21 +265,21 @@ header {
     height: 100%;
 }
 
-    /* Imagenes Secundarias */
-.container-secondary{
+/* Imagenes Secundarias */
+.container-secondary {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     margin-top: 10px;
 }
 
-.container-secondary img{
+.container-secondary img {
     width: 30%;
     height: 15vb;
     border-radius: 15px;
 }
 
-    /* Container Con la Informacion */
+/* Container Con la Informacion */
 .container-info {
     padding: 20px 20px 20px 10px;
     background-color: white;
@@ -276,11 +291,11 @@ header {
     margin-top: 10px;
 }
 
-.container-info h3 { 
+.container-info h3 {
     margin-top: 30px;
 }
 
-    /* Seleccion de Colores */
+/* Seleccion de Colores */
 .selector-color {
     display: flex;
     flex-direction: row;
@@ -292,11 +307,12 @@ header {
     margin-top: 0;
 }
 
-.selector-color input[type='radio']{
+.selector-color input[type='radio'] {
     margin-left: 10px;
     width: 35px;
     height: 35px;
-    appearance: none; /* A los input de tipo radio button les puse appareance none para poder modificarlo con los atributos comunes */
+    appearance: none;
+    /* A los input de tipo radio button les puse appareance none para poder modificarlo con los atributos comunes */
     border: 0px;
     border-radius: 50%;
 }
@@ -313,11 +329,13 @@ header {
     background-color: purple;
 }
 
-#color-azul:checked, #color-rojo:checked, #color-violeta:checked {
+#color-azul:checked,
+#color-rojo:checked,
+#color-violeta:checked {
     border: 3px solid black;
 }
 
-    /* Zona de Botones */
+/* Zona de Botones */
 .buttons-zone {
     margin-top: 20px;
     display: flex;
@@ -325,54 +343,54 @@ header {
 }
 
 
-    .counter-quantity {
-        display: flex;
-        flex-direction: row;
-        width: 40%;
-    }
+.counter-quantity {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+}
 
-    .counter-quantity button {
-        padding: 7px 10%;
-        background-color: #666;
-        color: white;
-        border: 1px solid #666;
-    }
+.counter-quantity button {
+    padding: 7px 10%;
+    background-color: #666;
+    color: white;
+    border: 1px solid #666;
+}
 
-    .counter-quantity button:first-child {
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-    }
+.counter-quantity button:first-child {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
 
-    .counter-quantity button:last-child {
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
+.counter-quantity button:last-child {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
 
-    .counter-quantity input {
-        width: inherit;
-        text-align: center;
-    }
+.counter-quantity input {
+    width: inherit;
+    text-align: center;
+}
 
-    .button-add-cart {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        margin-left: 10%;
-    }
+.button-add-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: 10%;
+}
 
-    .button-add-cart button {
-        width: 100%;
-        font-size: 22px;
-        color: white;
-        background-color: #666;
-        cursor: pointer;
-        border-radius: 15px;
-        padding: 5px 14px;
-        margin: auto;
-    }
+.button-add-cart button {
+    width: 100%;
+    font-size: 22px;
+    color: white;
+    background-color: #666;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 5px 14px;
+    margin: auto;
+}
 
-    /* Zona de Agregar a favorito */
+/* Zona de Agregar a favorito */
 .favorite-zone {
     margin-top: 10px;
     display: flex;
@@ -385,7 +403,7 @@ header {
 }
 
 /* El operador ~ asigna el CSS solo cuando el elemento del lado izquierdo exista  */
-#add-favorite:checked ~ label span {
+#add-favorite:checked~label span {
     color: red;
 }
 
@@ -408,7 +426,8 @@ header {
     display: flex;
     overflow: hidden;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* Añade soporte de desplazamiento suave en iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Añade soporte de desplazamiento suave en iOS */
 }
 
 .carousel {
@@ -423,7 +442,8 @@ header {
     height: 25vh;
     scroll-snap-align: start;
     border-radius: 30px;
-    padding: 20px; /* Espaciado interno para los elementos del carrusel */
+    padding: 20px;
+    /* Espaciado interno para los elementos del carrusel */
 }
 
 
@@ -433,10 +453,12 @@ header {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
 }
+
 /*============FOOTER====================*/
 footer {
     width: 100%;
@@ -464,7 +486,10 @@ footer {
     margin-bottom: 20px;
 }
 
-.column-1, .column-2, .column-3, .column-4 {
+.column-1,
+.column-2,
+.column-3,
+.column-4 {
     width: 40%;
 }
 
@@ -491,14 +516,14 @@ footer {
     font-size: 20px;
 }
 
-.horario{
+.horario {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     font-size: 16px;
 }
 
-.horario label{
+.horario label {
     padding-bottom: 10px;
 }
 
@@ -518,7 +543,7 @@ footer {
     color: black;
 }
 
-.contacto a i{
+.contacto a i {
     font-size: 20px;
 }
 
@@ -551,14 +576,14 @@ footer {
 
 @media (min-width: 761px) {
     .cajalogo {
-       width: 15%;
+        width: 15%;
     }
 
-    .searchbar{
+    .searchbar {
         width: 75%;
     }
-    
-    .user-cart{
+
+    .user-cart {
         width: 10%;
     }
 
@@ -570,12 +595,12 @@ footer {
         margin-top: 5vh;
         flex-direction: row;
     }
-    
-    .container-imgs{
+
+    .container-imgs {
         width: fit-content;
     }
-    
-    .container-secondary img{
+
+    .container-secondary img {
         height: 25vb;
     }
 
@@ -585,9 +610,10 @@ footer {
         margin-left: 20px;
         height: fit-content;
     }
-    .carousel img  {
+
+    .carousel img {
         width: 25%;
-        height: 35vh; 
+        height: 35vh;
     }
 
     body {
@@ -595,14 +621,16 @@ footer {
         margin-top: 11rem;
     }
 
-    .container-body{
+    .container-body {
         flex-direction: row;
     }
 
-    .column-1, .column-2, .column-3, .column-4 {
+    .column-1,
+    .column-2,
+    .column-3,
+    .column-4 {
         padding-right: 50px;
         padding-left: 50px;
-        width: 50%;  
+        width: 50%;
     }
 }
-
