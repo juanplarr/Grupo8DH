@@ -11,6 +11,12 @@ module.exports = {
   register: (req, res) => {
     res.render(path.resolve(__dirname, "../views/register.ejs"));
   },
+  getAlls: async (req, res) => {
+    let allUsers = await Usuario.findAndCountAll({
+      attributes: ['id', 'apellido', 'nombre', 'email']
+    });
+    return res.json(allUsers);
+  },
   create: async (req, res) => {
     /*let archivoUsuarios = JSON.parse(
       fs.readFileSync(path.resolve(__dirname, "../JSON/usuarios.json"))
