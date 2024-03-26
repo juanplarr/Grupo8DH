@@ -34,4 +34,6 @@ productRoutes.put('/products/prodEdit/:id', upload.single('avatar'), productCont
 productRoutes.get('/products/prodDelete/:id', productController.delete);
 productRoutes.get('/products/prodDestroy/:id', productController.destroy);
 
+productRoutes.get('/api/products', productController.getAlls);
+
 module.exports = productRoutes;

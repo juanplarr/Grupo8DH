@@ -101,5 +101,6 @@ userRoutes.get("/login", usuarioLogueado, userController.login);
 userRoutes.post("/login", validacionesLogin, userController.ingresar);
 userRoutes.get("/profile", userController.profile);
 userRoutes.get('/api/users', userController.getAlls);
+userRoutes.get('/api/users/:id', userController.getById);
 
 module.exports = userRoutes;

@@ -17,6 +17,15 @@ module.exports = {
     });
     return res.json(allUsers);
   },
+  getById: async (req, res) => {
+    let userId = req.params.id;
+    let user = await Usuario.findByPk(userId, {
+      attributes: ['id', 'apellido', 'nombre', 'dni', 'email'] 
+  });
+  if (!user) {
+    return res.status(404).json({ error: 'Usuario no encontrado' });
+  } return res.json(user);
+    },
   create: async (req, res) => {
     /*let archivoUsuarios = JSON.parse(
       fs.readFileSync(path.resolve(__dirname, "../JSON/usuarios.json"))

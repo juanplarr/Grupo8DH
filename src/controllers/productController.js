@@ -11,6 +11,25 @@ module.exports = {
     res.render(path.resolve(__dirname, "../views/carrito.ejs"));
   },
 
+  getAlls: async (req, res) => {
+    let allProducts = await Producto.findAndCountAll({
+      attributes: ['id', 'nombre', 'precio', 'precioMay','detalle', 'stock', 'categoriaId']
+    });
+    let countByCategory = {};
+    allProducts.rows.forEach(product => {
+        if (countByCategory[product.categoriaId]) {
+            countByCategory[product.categoriaId]++;
+        } else {
+            countByCategory[product.categoriaId] = 1;
+        }
+    });
+    const response = {
+        allProducts: allProducts,
+        countByCategory: countByCategory
+    };
+    return res.json(response);
+  },
+
   product: async (req, res) => {
     try {
       /* let productosL = JSON.parse(
